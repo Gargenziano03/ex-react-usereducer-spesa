@@ -48,6 +48,8 @@ export default function App() {
     setAddedProducts(updated);
   };
 
+  const totalToPay = addedProducts.reduce((acc, p) => acc + p.price * p.quantity, 0);
+
   return (
     <div className="container">
       <h1>Prodotti</h1>
@@ -75,6 +77,8 @@ export default function App() {
           ))}
         </ul>
       )}
+      <h2>Totale spesa</h2>
+      <div> €{totalToPay} </div>
     </div>
   );
 }
